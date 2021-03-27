@@ -12,6 +12,19 @@ def BFS(graph, start_node):
 
     return visited
 
+def DFS(graph, start_node):
+    visited = list()
+    need_to_visited_stack = list()
+    need_to_visited_stack.append(start_node)
+
+    while need_to_visited_stack:
+        node = need_to_visited_stack.pop()
+        if node not in visited:
+            visited.append(node)
+            need_to_visited_stack.extend(graph[node])
+
+    return visited
+
 
 graph = dict()
 graph["A"] = ["B", "C"]
@@ -26,3 +39,4 @@ graph["I"] = ["C", "J"]
 graph["J"] = ["I"]
 
 print(BFS(graph, "A"))
+print(DFS(graph, "A"))
