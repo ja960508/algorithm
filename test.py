@@ -10,5 +10,8 @@ def solution(number):
 
 
 if __name__ == "__main__":
-    number = int(input())
-    print(solution(number))
+    x = 5
+    y = -5
+    x, y = (y, x)[::-1]
+
+    print(y, x)
